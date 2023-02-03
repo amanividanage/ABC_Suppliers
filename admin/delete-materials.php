@@ -16,7 +16,7 @@ if(isset($_GET['id']) && isset($_GET['image_name'])){
         $path = "../images/material/".$image_name;
 
         //remove image file from the folder
-        $remove = unlink($path);
+        $remove = basename($path);
 
         //check whether the image is removed or not
         if($remove==false){
