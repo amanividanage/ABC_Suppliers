@@ -191,18 +191,13 @@
                                     
                                     //remove the image if new image is uploaded and current image exists
                                     //remove current image if available
-                                
-
                                     if($current_image!=""){
-                                     
-                                            $remove_path = "../images/category/".$current_image;
-                                            $real_path = realpath($remove_path);
-                                            $base_dir = realpath("../images/category/");
-                                        
-                                            if (strpos($real_path, $base_dir) === 0 && is_file($real_path)) {
-                                                unlink($real_path);
-                                            }
-                                        }
+                                        //current image is available
+                                        //remove the image
+                                        $remove_path = "../images/material/".$current_image;
+                            
+
+                                        $remove = basename($remove_path);
 
                                         //check whether the image is removed or not
                                         if($remove==false){
