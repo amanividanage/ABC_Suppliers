@@ -194,10 +194,14 @@
                                 
 
                                     if($current_image!=""){
-                                        $allowed_images = array('image1.jpg', 'image2.jpg', ...); // List of allowed image names
-                                        if (in_array($current_image, $allowed_images)) {
+                                     
                                             $remove_path = "../images/category/".$current_image;
-                                            $remove = unlink($remove_path);
+                                            $real_path = realpath($remove_path);
+                                            $base_dir = realpath("../images/category/");
+                                        
+                                            if (strpos($real_path, $base_dir) === 0 && is_file($real_path)) {
+                                                unlink($real_path);
+                                            }
                                         }
 
                                         //check whether the image is removed or not
