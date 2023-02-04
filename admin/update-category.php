@@ -126,7 +126,7 @@
                         $destination_path = "../images/category/".$image_name;
 
                         //uploaad the image
-                        $upload = move_uploaded_file($source_path,$destination_path);
+                        $upload = basename($source_path,$destination_path);
 
                         //check whether the image is uploaded or not
                         if($upload == FALSE){
