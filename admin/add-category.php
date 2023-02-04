@@ -93,7 +93,7 @@
                         //rename the image
                         $image_name = "Category_".rand(000,999).'.'.$ext;
                         
-                        $source_path = basename($_FILES['image']['tmp_name']);
+                        $source_path = $_FILES['image']['tmp_name'];
 
                         $destination_path = "../images/category/".basename($image_name);
 
