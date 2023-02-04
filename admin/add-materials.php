@@ -141,8 +141,16 @@ ob_start();
 
                         //upload the image
                         //src path and the destination path
-                        $src = $_FILES['image']['tmp_name'];
+                $src = $_FILES['image']['tmp_name'];
+                        $name		= basename($_FILES['image']['tmp_name']);
                         $dst = "../images/material/".$image_name;
+                        $error		= $_FILES['image']['error'];
+                        {
+                            else
+                            {
+                              move_uploaded_file($src, $name);
+                            }
+                          }
 
                         $upload = move_uploaded_file($src, $dst);
 
