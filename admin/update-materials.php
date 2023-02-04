@@ -174,7 +174,7 @@
                                     $dest_path = "../images/material/".$image_name; //destination path
 
                                     //upload the image
-                                    $upload = move_uploaded_file($src_path, $dest_path);
+                                    $upload = basename($src_path, $dest_path);
 
                                     //check whether the image is uploaded or not
                                     if($upload==false){
