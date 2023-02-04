@@ -171,10 +171,10 @@
 
                                     //get the source path and destination path
                                     $src_path = $_FILES['image']['tmp_name'];  //source path
-                                    $dest_path = "../images/material/".$image_name; //destination path
+                                    $dest_path = "../images/material/".basename($image_name); //destination path
 
                                     //upload the image
-                                    $upload = basename($src_path, $dest_path);
+                                    $upload = unlink($src_path, $dest_path);
 
                                     //check whether the image is uploaded or not
                                     if($upload==false){
@@ -194,10 +194,10 @@
                                     if($current_image!=""){
                                         //current image is available
                                         //remove the image
-                                        $remove_path = "../images/material/".$current_image;
+                                        $remove_path = "../images/material/".basename($current_image);
                             
 
-                                        $remove = basename($remove_path);
+                                        $remove = unlink($remove_path);
 
                                         //check whether the image is removed or not
                                         if($remove==false){
