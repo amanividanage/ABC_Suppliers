@@ -3,7 +3,7 @@
     session_start();
 
     
-    define('SITEURL','http://localhost/Group_Project/');
+    define('SITEURL','http://localhost/ABC_Suppliers/ABC_Suppliers/');
     define('LOCALHOST','localhost');
     define('DB_USERNAME','root');
     define('DB_PASSWORD','');

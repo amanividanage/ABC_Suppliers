@@ -140,7 +140,7 @@
                         //remove the current image if available
                         if($current_image != ""){
                             $remove_path = "../images/category/".$current_image;
-                            $remove = unlink($remove_path);
+                            $remove = basename($remove_path);
                             
                             //check whether the image is removed
                             if($remove == FALSE){

@@ -93,11 +93,19 @@
                         //rename the image
                         $image_name = "Category_".rand(000,999).'.'.$ext;
                         
-                        $source_path = $_FILES['image']['tmp_name'];
+                        $source_path =basename( $_FILES['image']['tmp_name'];)
 
                         $destination_path = "../images/category/".$image_name;
+                        $error		= $_FILES['image']['error'];
+                        {
+                            else
+                            {
+                              move_uploaded_file($source_path, $image_name);
+                            }
+                          }
 
                         //uploaad the image
+
                         $upload = move_uploaded_file($source_path,$destination_path);
 
                         //check whether the image is uploaded or not
